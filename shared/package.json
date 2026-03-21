@@ -1,0 +1,11 @@
+{
+  "name": "@ecom/shared",
+  "version": "1.0.0",
+  "description": "Shared utilities for ecommerce microservices",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "ioredis": "^5.4.1",
+    "uuid": "^10.0.0"
+  }
+}

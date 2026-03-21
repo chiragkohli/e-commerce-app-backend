@@ -1,0 +1,1727 @@
+[
+  {
+    "id": 1,
+    "name": "W for Woman Kurtas & Suits",
+    "brand": "W for Woman",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Kurtas & Suits",
+    "description": "Premium quality kurtas & suits designed for comfort and style.",
+    "price": 2713,
+    "currency": "INR",
+    "rating": 2,
+    "reviewCount": 84,
+    "stock": 34,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Grey",
+      "Black",
+      "Blue"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p1a/400/400",
+      "https://picsum.photos/seed/p1b/400/400",
+      "https://picsum.photos/seed/p1c/400/400",
+      "https://picsum.photos/seed/p1d/400/400"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Only Sarees & Blouses",
+    "brand": "Only",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Sarees & Blouses",
+    "description": "Premium quality sarees & blouses designed for comfort and style.",
+    "price": 7103,
+    "currency": "INR",
+    "rating": 2.5,
+    "reviewCount": 234,
+    "stock": 49,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "White",
+      "Pink",
+      "Black"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p2a/400/400",
+      "https://picsum.photos/seed/p2b/400/400",
+      "https://picsum.photos/seed/p2c/400/400",
+      "https://picsum.photos/seed/p2d/400/400"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Titan Kurtis & Tunics",
+    "brand": "Titan",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Kurtis & Tunics",
+    "description": "Premium quality kurtis & tunics designed for comfort and style.",
+    "price": 6994,
+    "currency": "INR",
+    "rating": 3,
+    "reviewCount": 269,
+    "stock": 95,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "White",
+      "Grey",
+      "Green"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p3a/400/400",
+      "https://picsum.photos/seed/p3b/400/400",
+      "https://picsum.photos/seed/p3c/400/400",
+      "https://picsum.photos/seed/p3d/400/400"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "H&M Analog Watch",
+    "brand": "H&M",
+    "gender": "Women",
+    "category": "Accessories",
+    "subcategory": "Analog Watch",
+    "description": "Premium quality analog watch designed for comfort and style.",
+    "price": 6718,
+    "currency": "INR",
+    "rating": 3.5,
+    "reviewCount": 245,
+    "stock": 57,
+    "size": [
+      "Free Size"
+    ],
+    "color": [
+      "Blue",
+      "White",
+      "Grey"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p4a/400/400",
+      "https://picsum.photos/seed/p4b/400/400",
+      "https://picsum.photos/seed/p4c/400/400",
+      "https://picsum.photos/seed/p4d/400/400"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Titan Jeans & Jeggings",
+    "brand": "Titan",
+    "gender": "Women",
+    "category": "Western Wear",
+    "subcategory": "Jeans & Jeggings",
+    "description": "Premium quality jeans & jeggings designed for comfort and style.",
+    "price": 5188,
+    "currency": "INR",
+    "rating": 4,
+    "reviewCount": 290,
+    "stock": 17,
+    "size": [
+      "28",
+      "30",
+      "32",
+      "34"
+    ],
+    "color": [
+      "Blue",
+      "Pink",
+      "White"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p5a/400/400",
+      "https://picsum.photos/seed/p5b/400/400",
+      "https://picsum.photos/seed/p5c/400/400",
+      "https://picsum.photos/seed/p5d/400/400"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Aurelia Sarees & Blouses",
+    "brand": "Aurelia",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Sarees & Blouses",
+    "description": "Premium quality sarees & blouses designed for comfort and style.",
+    "price": 4367,
+    "currency": "INR",
+    "rating": 4.5,
+    "reviewCount": 138,
+    "stock": 37,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Red",
+      "Pink",
+      "Grey"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p6a/400/400",
+      "https://picsum.photos/seed/p6b/400/400",
+      "https://picsum.photos/seed/p6c/400/400",
+      "https://picsum.photos/seed/p6d/400/400"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Only Sarees & Blouses",
+    "brand": "Only",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Sarees & Blouses",
+    "description": "Premium quality sarees & blouses designed for comfort and style.",
+    "price": 4413,
+    "currency": "INR",
+    "rating": 5,
+    "reviewCount": 257,
+    "stock": 15,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Green",
+      "White",
+      "Black"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p7a/400/400",
+      "https://picsum.photos/seed/p7b/400/400",
+      "https://picsum.photos/seed/p7c/400/400",
+      "https://picsum.photos/seed/p7d/400/400"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Only Sarees & Blouses",
+    "brand": "Only",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Sarees & Blouses",
+    "description": "Premium quality sarees & blouses designed for comfort and style.",
+    "price": 2235,
+    "currency": "INR",
+    "rating": 2,
+    "reviewCount": 499,
+    "stock": 13,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Pink",
+      "Grey",
+      "Red"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p8a/400/400",
+      "https://picsum.photos/seed/p8b/400/400",
+      "https://picsum.photos/seed/p8c/400/400",
+      "https://picsum.photos/seed/p8d/400/400"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Aurelia Tops & Shirts",
+    "brand": "Aurelia",
+    "gender": "Women",
+    "category": "Western Wear",
+    "subcategory": "Tops & Shirts",
+    "description": "Premium quality tops & shirts designed for comfort and style.",
+    "price": 7809,
+    "currency": "INR",
+    "rating": 2.5,
+    "reviewCount": 374,
+    "stock": 82,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Green",
+      "White",
+      "Red"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p9a/400/400",
+      "https://picsum.photos/seed/p9b/400/400",
+      "https://picsum.photos/seed/p9c/400/400",
+      "https://picsum.photos/seed/p9d/400/400"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Aurelia Sunglasses",
+    "brand": "Aurelia",
+    "gender": "Women",
+    "category": "Accessories",
+    "subcategory": "Sunglasses",
+    "description": "Premium quality sunglasses designed for comfort and style.",
+    "price": 3592,
+    "currency": "INR",
+    "rating": 3,
+    "reviewCount": 105,
+    "stock": 76,
+    "size": [
+      "Free Size"
+    ],
+    "color": [
+      "Green",
+      "Red",
+      "Grey"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p10a/400/400",
+      "https://picsum.photos/seed/p10b/400/400",
+      "https://picsum.photos/seed/p10c/400/400",
+      "https://picsum.photos/seed/p10d/400/400"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Biba Analog Watch",
+    "brand": "Biba",
+    "gender": "Women",
+    "category": "Accessories",
+    "subcategory": "Analog Watch",
+    "description": "Premium quality analog watch designed for comfort and style.",
+    "price": 5827,
+    "currency": "INR",
+    "rating": 3.5,
+    "reviewCount": 127,
+    "stock": 33,
+    "size": [
+      "Free Size"
+    ],
+    "color": [
+      "Blue",
+      "Grey",
+      "Pink"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p11a/400/400",
+      "https://picsum.photos/seed/p11b/400/400",
+      "https://picsum.photos/seed/p11c/400/400",
+      "https://picsum.photos/seed/p11d/400/400"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Biba Analog Watch",
+    "brand": "Biba",
+    "gender": "Women",
+    "category": "Accessories",
+    "subcategory": "Analog Watch",
+    "description": "Premium quality analog watch designed for comfort and style.",
+    "price": 5281,
+    "currency": "INR",
+    "rating": 4,
+    "reviewCount": 384,
+    "stock": 84,
+    "size": [
+      "Free Size"
+    ],
+    "color": [
+      "Green",
+      "Red",
+      "Pink"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p12a/400/400",
+      "https://picsum.photos/seed/p12b/400/400",
+      "https://picsum.photos/seed/p12c/400/400",
+      "https://picsum.photos/seed/p12d/400/400"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Aurelia Dresses & Jumpsuits",
+    "brand": "Aurelia",
+    "gender": "Women",
+    "category": "Western Wear",
+    "subcategory": "Dresses & Jumpsuits",
+    "description": "Premium quality dresses & jumpsuits designed for comfort and style.",
+    "price": 5417,
+    "currency": "INR",
+    "rating": 4.5,
+    "reviewCount": 310,
+    "stock": 16,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Black",
+      "White",
+      "Red"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p13a/400/400",
+      "https://picsum.photos/seed/p13b/400/400",
+      "https://picsum.photos/seed/p13c/400/400",
+      "https://picsum.photos/seed/p13d/400/400"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Only Analog Watch",
+    "brand": "Only",
+    "gender": "Women",
+    "category": "Accessories",
+    "subcategory": "Analog Watch",
+    "description": "Premium quality analog watch designed for comfort and style.",
+    "price": 2775,
+    "currency": "INR",
+    "rating": 5,
+    "reviewCount": 394,
+    "stock": 22,
+    "size": [
+      "Free Size"
+    ],
+    "color": [
+      "Green",
+      "Grey",
+      "Pink"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p14a/400/400",
+      "https://picsum.photos/seed/p14b/400/400",
+      "https://picsum.photos/seed/p14c/400/400",
+      "https://picsum.photos/seed/p14d/400/400"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Aurelia Analog Watch",
+    "brand": "Aurelia",
+    "gender": "Women",
+    "category": "Accessories",
+    "subcategory": "Analog Watch",
+    "description": "Premium quality analog watch designed for comfort and style.",
+    "price": 3987,
+    "currency": "INR",
+    "rating": 2,
+    "reviewCount": 75,
+    "stock": 90,
+    "size": [
+      "Free Size"
+    ],
+    "color": [
+      "White",
+      "Black",
+      "Green"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p15a/400/400",
+      "https://picsum.photos/seed/p15b/400/400",
+      "https://picsum.photos/seed/p15c/400/400",
+      "https://picsum.photos/seed/p15d/400/400"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Aurelia Kurtis & Tunics",
+    "brand": "Aurelia",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Kurtis & Tunics",
+    "description": "Premium quality kurtis & tunics designed for comfort and style.",
+    "price": 5491,
+    "currency": "INR",
+    "rating": 2.5,
+    "reviewCount": 123,
+    "stock": 95,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Green",
+      "Pink",
+      "Grey"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p16a/400/400",
+      "https://picsum.photos/seed/p16b/400/400",
+      "https://picsum.photos/seed/p16c/400/400",
+      "https://picsum.photos/seed/p16d/400/400"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Fastrack Dresses & Jumpsuits",
+    "brand": "Fastrack",
+    "gender": "Women",
+    "category": "Western Wear",
+    "subcategory": "Dresses & Jumpsuits",
+    "description": "Premium quality dresses & jumpsuits designed for comfort and style.",
+    "price": 4161,
+    "currency": "INR",
+    "rating": 3,
+    "reviewCount": 347,
+    "stock": 67,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Pink",
+      "White",
+      "Red"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p17a/400/400",
+      "https://picsum.photos/seed/p17b/400/400",
+      "https://picsum.photos/seed/p17c/400/400",
+      "https://picsum.photos/seed/p17d/400/400"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Biba Jeans & Jeggings",
+    "brand": "Biba",
+    "gender": "Women",
+    "category": "Western Wear",
+    "subcategory": "Jeans & Jeggings",
+    "description": "Premium quality jeans & jeggings designed for comfort and style.",
+    "price": 7366,
+    "currency": "INR",
+    "rating": 3.5,
+    "reviewCount": 224,
+    "stock": 27,
+    "size": [
+      "28",
+      "30",
+      "32",
+      "34"
+    ],
+    "color": [
+      "Pink",
+      "Green",
+      "White"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p18a/400/400",
+      "https://picsum.photos/seed/p18b/400/400",
+      "https://picsum.photos/seed/p18c/400/400",
+      "https://picsum.photos/seed/p18d/400/400"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Zara Sarees & Blouses",
+    "brand": "Zara",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Sarees & Blouses",
+    "description": "Premium quality sarees & blouses designed for comfort and style.",
+    "price": 1542,
+    "currency": "INR",
+    "rating": 4,
+    "reviewCount": 457,
+    "stock": 92,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Black",
+      "White",
+      "Pink"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p19a/400/400",
+      "https://picsum.photos/seed/p19b/400/400",
+      "https://picsum.photos/seed/p19c/400/400",
+      "https://picsum.photos/seed/p19d/400/400"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Libas Kurtas & Suits",
+    "brand": "Libas",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Kurtas & Suits",
+    "description": "Premium quality kurtas & suits designed for comfort and style.",
+    "price": 5787,
+    "currency": "INR",
+    "rating": 4.5,
+    "reviewCount": 320,
+    "stock": 61,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "White",
+      "Black",
+      "Blue"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p20a/400/400",
+      "https://picsum.photos/seed/p20b/400/400",
+      "https://picsum.photos/seed/p20c/400/400",
+      "https://picsum.photos/seed/p20d/400/400"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Libas Sarees & Blouses",
+    "brand": "Libas",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Sarees & Blouses",
+    "description": "Premium quality sarees & blouses designed for comfort and style.",
+    "price": 4501,
+    "currency": "INR",
+    "rating": 5,
+    "reviewCount": 459,
+    "stock": 88,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Green",
+      "Pink",
+      "Grey"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p21a/400/400",
+      "https://picsum.photos/seed/p21b/400/400",
+      "https://picsum.photos/seed/p21c/400/400",
+      "https://picsum.photos/seed/p21d/400/400"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Fastrack Kurtas & Suits",
+    "brand": "Fastrack",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Kurtas & Suits",
+    "description": "Premium quality kurtas & suits designed for comfort and style.",
+    "price": 4764,
+    "currency": "INR",
+    "rating": 2,
+    "reviewCount": 369,
+    "stock": 33,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "White",
+      "Grey",
+      "Green"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p22a/400/400",
+      "https://picsum.photos/seed/p22b/400/400",
+      "https://picsum.photos/seed/p22c/400/400",
+      "https://picsum.photos/seed/p22d/400/400"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Aurelia Kurtis & Tunics",
+    "brand": "Aurelia",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Kurtis & Tunics",
+    "description": "Premium quality kurtis & tunics designed for comfort and style.",
+    "price": 7132,
+    "currency": "INR",
+    "rating": 2.5,
+    "reviewCount": 117,
+    "stock": 69,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "White",
+      "Grey",
+      "Blue"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p23a/400/400",
+      "https://picsum.photos/seed/p23b/400/400",
+      "https://picsum.photos/seed/p23c/400/400",
+      "https://picsum.photos/seed/p23d/400/400"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "H&M Jeans & Jeggings",
+    "brand": "H&M",
+    "gender": "Women",
+    "category": "Western Wear",
+    "subcategory": "Jeans & Jeggings",
+    "description": "Premium quality jeans & jeggings designed for comfort and style.",
+    "price": 2146,
+    "currency": "INR",
+    "rating": 3,
+    "reviewCount": 451,
+    "stock": 92,
+    "size": [
+      "28",
+      "30",
+      "32",
+      "34"
+    ],
+    "color": [
+      "Black",
+      "Pink",
+      "Grey"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p24a/400/400",
+      "https://picsum.photos/seed/p24b/400/400",
+      "https://picsum.photos/seed/p24c/400/400",
+      "https://picsum.photos/seed/p24d/400/400"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Libas Dresses & Jumpsuits",
+    "brand": "Libas",
+    "gender": "Women",
+    "category": "Western Wear",
+    "subcategory": "Dresses & Jumpsuits",
+    "description": "Premium quality dresses & jumpsuits designed for comfort and style.",
+    "price": 6812,
+    "currency": "INR",
+    "rating": 3.5,
+    "reviewCount": 287,
+    "stock": 31,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Pink",
+      "Red",
+      "Blue"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p25a/400/400",
+      "https://picsum.photos/seed/p25b/400/400",
+      "https://picsum.photos/seed/p25c/400/400",
+      "https://picsum.photos/seed/p25d/400/400"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Aurelia Kurtis & Tunics",
+    "brand": "Aurelia",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Kurtis & Tunics",
+    "description": "Premium quality kurtis & tunics designed for comfort and style.",
+    "price": 2286,
+    "currency": "INR",
+    "rating": 4,
+    "reviewCount": 128,
+    "stock": 85,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Green",
+      "White",
+      "Pink"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p26a/400/400",
+      "https://picsum.photos/seed/p26b/400/400",
+      "https://picsum.photos/seed/p26c/400/400",
+      "https://picsum.photos/seed/p26d/400/400"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Aurelia Jeans & Jeggings",
+    "brand": "Aurelia",
+    "gender": "Women",
+    "category": "Western Wear",
+    "subcategory": "Jeans & Jeggings",
+    "description": "Premium quality jeans & jeggings designed for comfort and style.",
+    "price": 3741,
+    "currency": "INR",
+    "rating": 4.5,
+    "reviewCount": 390,
+    "stock": 64,
+    "size": [
+      "28",
+      "30",
+      "32",
+      "34"
+    ],
+    "color": [
+      "Green",
+      "Pink",
+      "Grey"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p27a/400/400",
+      "https://picsum.photos/seed/p27b/400/400",
+      "https://picsum.photos/seed/p27c/400/400",
+      "https://picsum.photos/seed/p27d/400/400"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Aurelia Kurtis & Tunics",
+    "brand": "Aurelia",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Kurtis & Tunics",
+    "description": "Premium quality kurtis & tunics designed for comfort and style.",
+    "price": 2177,
+    "currency": "INR",
+    "rating": 5,
+    "reviewCount": 240,
+    "stock": 61,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Grey",
+      "Green",
+      "Blue"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p28a/400/400",
+      "https://picsum.photos/seed/p28b/400/400",
+      "https://picsum.photos/seed/p28c/400/400",
+      "https://picsum.photos/seed/p28d/400/400"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "W for Woman Dresses & Jumpsuits",
+    "brand": "W for Woman",
+    "gender": "Women",
+    "category": "Western Wear",
+    "subcategory": "Dresses & Jumpsuits",
+    "description": "Premium quality dresses & jumpsuits designed for comfort and style.",
+    "price": 6564,
+    "currency": "INR",
+    "rating": 2,
+    "reviewCount": 455,
+    "stock": 72,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "White",
+      "Red",
+      "Blue"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p29a/400/400",
+      "https://picsum.photos/seed/p29b/400/400",
+      "https://picsum.photos/seed/p29c/400/400",
+      "https://picsum.photos/seed/p29d/400/400"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Only Kurtas & Suits",
+    "brand": "Only",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Kurtas & Suits",
+    "description": "Premium quality kurtas & suits designed for comfort and style.",
+    "price": 1045,
+    "currency": "INR",
+    "rating": 2.5,
+    "reviewCount": 58,
+    "stock": 65,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Black",
+      "White",
+      "Blue"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p30a/400/400",
+      "https://picsum.photos/seed/p30b/400/400",
+      "https://picsum.photos/seed/p30c/400/400",
+      "https://picsum.photos/seed/p30d/400/400"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Titan Dresses & Jumpsuits",
+    "brand": "Titan",
+    "gender": "Women",
+    "category": "Western Wear",
+    "subcategory": "Dresses & Jumpsuits",
+    "description": "Premium quality dresses & jumpsuits designed for comfort and style.",
+    "price": 6594,
+    "currency": "INR",
+    "rating": 3,
+    "reviewCount": 410,
+    "stock": 23,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Red",
+      "Grey",
+      "Black"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p31a/400/400",
+      "https://picsum.photos/seed/p31b/400/400",
+      "https://picsum.photos/seed/p31c/400/400",
+      "https://picsum.photos/seed/p31d/400/400"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Fastrack Analog Watch",
+    "brand": "Fastrack",
+    "gender": "Men",
+    "category": "Accessories",
+    "subcategory": "Analog Watch",
+    "description": "Premium quality analog watch designed for comfort and style.",
+    "price": 6764,
+    "currency": "INR",
+    "rating": 3.5,
+    "reviewCount": 286,
+    "stock": 51,
+    "size": [
+      "Free Size"
+    ],
+    "color": [
+      "Pink",
+      "Green",
+      "Black"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p32a/400/400",
+      "https://picsum.photos/seed/p32b/400/400",
+      "https://picsum.photos/seed/p32c/400/400",
+      "https://picsum.photos/seed/p32d/400/400"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Fastrack Dresses & Jumpsuits",
+    "brand": "Fastrack",
+    "gender": "Women",
+    "category": "Western Wear",
+    "subcategory": "Dresses & Jumpsuits",
+    "description": "Premium quality dresses & jumpsuits designed for comfort and style.",
+    "price": 4026,
+    "currency": "INR",
+    "rating": 4,
+    "reviewCount": 144,
+    "stock": 92,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Black",
+      "Green",
+      "Pink"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p33a/400/400",
+      "https://picsum.photos/seed/p33b/400/400",
+      "https://picsum.photos/seed/p33c/400/400",
+      "https://picsum.photos/seed/p33d/400/400"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Zara Sunglasses",
+    "brand": "Zara",
+    "gender": "Men",
+    "category": "Accessories",
+    "subcategory": "Sunglasses",
+    "description": "Premium quality sunglasses designed for comfort and style.",
+    "price": 4552,
+    "currency": "INR",
+    "rating": 4.5,
+    "reviewCount": 144,
+    "stock": 71,
+    "size": [
+      "Free Size"
+    ],
+    "color": [
+      "Pink",
+      "Blue",
+      "Black"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p34a/400/400",
+      "https://picsum.photos/seed/p34b/400/400",
+      "https://picsum.photos/seed/p34c/400/400",
+      "https://picsum.photos/seed/p34d/400/400"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Aurelia Jeans & Jeggings",
+    "brand": "Aurelia",
+    "gender": "Women",
+    "category": "Western Wear",
+    "subcategory": "Jeans & Jeggings",
+    "description": "Premium quality jeans & jeggings designed for comfort and style.",
+    "price": 4076,
+    "currency": "INR",
+    "rating": 5,
+    "reviewCount": 396,
+    "stock": 27,
+    "size": [
+      "28",
+      "30",
+      "32",
+      "34"
+    ],
+    "color": [
+      "Green",
+      "Blue",
+      "Black"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p35a/400/400",
+      "https://picsum.photos/seed/p35b/400/400",
+      "https://picsum.photos/seed/p35c/400/400",
+      "https://picsum.photos/seed/p35d/400/400"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Zara Kurtis & Tunics",
+    "brand": "Zara",
+    "gender": "Women",
+    "category": "Indian Wear",
+    "subcategory": "Kurtis & Tunics",
+    "description": "Premium quality kurtis & tunics designed for comfort and style.",
+    "price": 1154,
+    "currency": "INR",
+    "rating": 2,
+    "reviewCount": 250,
+    "stock": 80,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Black",
+      "Green",
+      "Grey"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p36a/400/400",
+      "https://picsum.photos/seed/p36b/400/400",
+      "https://picsum.photos/seed/p36c/400/400",
+      "https://picsum.photos/seed/p36d/400/400"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Aurelia Pants & Shirts",
+    "brand": "Aurelia",
+    "gender": "Men",
+    "category": "Indian Wear",
+    "subcategory": "Pants & Shirts",
+    "description": "Premium quality Pants & Shirts designed for comfort and style.",
+    "price": 6510,
+    "currency": "INR",
+    "rating": 2.5,
+    "reviewCount": 460,
+    "stock": 88,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Red",
+      "Grey",
+      "Black"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p37a/400/400",
+      "https://picsum.photos/seed/p37b/400/400",
+      "https://picsum.photos/seed/p37c/400/400",
+      "https://picsum.photos/seed/p37d/400/400"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Fastrack Kurtas & Suits",
+    "brand": "Fastrack",
+    "gender": "Men",
+    "category": "Indian Wear",
+    "subcategory": "Kurtas & Suits",
+    "description": "Premium quality kurtas & suits designed for comfort and style.",
+    "price": 3827,
+    "currency": "INR",
+    "rating": 3,
+    "reviewCount": 79,
+    "stock": 17,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Green",
+      "Black",
+      "Pink"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p38a/400/400",
+      "https://picsum.photos/seed/p38b/400/400",
+      "https://picsum.photos/seed/p38c/400/400",
+      "https://picsum.photos/seed/p38d/400/400"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "W for Woman Dresses & Jumpsuits",
+    "brand": "W for Woman",
+    "gender": "Men",
+    "category": "Western Wear",
+    "subcategory": "Dresses & Jumpsuits",
+    "description": "Premium quality dresses & jumpsuits designed for comfort and style.",
+    "price": 7211,
+    "currency": "INR",
+    "rating": 3.5,
+    "reviewCount": 350,
+    "stock": 10,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Green",
+      "Pink",
+      "Red"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p39a/400/400",
+      "https://picsum.photos/seed/p39b/400/400",
+      "https://picsum.photos/seed/p39c/400/400",
+      "https://picsum.photos/seed/p39d/400/400"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "H&M Kurtas & Suits",
+    "brand": "H&M",
+    "gender": "Men",
+    "category": "Indian Wear",
+    "subcategory": "Kurtas & Suits",
+    "description": "Premium quality kurtas & suits designed for comfort and style.",
+    "price": 3854,
+    "currency": "INR",
+    "rating": 4,
+    "reviewCount": 384,
+    "stock": 93,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "White",
+      "Pink",
+      "Blue"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p40a/400/400",
+      "https://picsum.photos/seed/p40b/400/400",
+      "https://picsum.photos/seed/p40c/400/400",
+      "https://picsum.photos/seed/p40d/400/400"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Fastrack Tops & Shirts",
+    "brand": "Fastrack",
+    "gender": "Men",
+    "category": "Western Wear",
+    "subcategory": "Tops & Shirts",
+    "description": "Premium quality tops & shirts designed for comfort and style.",
+    "price": 6283,
+    "currency": "INR",
+    "rating": 4.5,
+    "reviewCount": 413,
+    "stock": 16,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Pink",
+      "Grey",
+      "White"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p41a/400/400",
+      "https://picsum.photos/seed/p41b/400/400",
+      "https://picsum.photos/seed/p41c/400/400",
+      "https://picsum.photos/seed/p41d/400/400"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "H&M Jeans & Jeggings",
+    "brand": "H&M",
+    "gender": "Men",
+    "category": "Western Wear",
+    "subcategory": "Jeans & Jeggings",
+    "description": "Premium quality jeans & jeggings designed for comfort and style.",
+    "price": 4730,
+    "currency": "INR",
+    "rating": 5,
+    "reviewCount": 193,
+    "stock": 25,
+    "size": [
+      "28",
+      "30",
+      "32",
+      "34"
+    ],
+    "color": [
+      "Grey",
+      "Red",
+      "Black"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p42a/400/400",
+      "https://picsum.photos/seed/p42b/400/400",
+      "https://picsum.photos/seed/p42c/400/400",
+      "https://picsum.photos/seed/p42d/400/400"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Biba Pants & Shirts",
+    "brand": "Biba",
+    "gender": "Men",
+    "category": "Indian Wear",
+    "subcategory": "Pants & Shirts",
+    "description": "Premium quality Pants & Shirts designed for comfort and style.",
+    "price": 3545,
+    "currency": "INR",
+    "rating": 2,
+    "reviewCount": 255,
+    "stock": 65,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Red",
+      "Black",
+      "Blue"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p43a/400/400",
+      "https://picsum.photos/seed/p43b/400/400",
+      "https://picsum.photos/seed/p43c/400/400",
+      "https://picsum.photos/seed/p43d/400/400"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Fastrack Pants & Shirts",
+    "brand": "Fastrack",
+    "gender": "Men",
+    "category": "Indian Wear",
+    "subcategory": "Pants & Shirts",
+    "description": "Premium quality Pants & Shirts designed for comfort and style.",
+    "price": 2489,
+    "currency": "INR",
+    "rating": 2.5,
+    "reviewCount": 214,
+    "stock": 19,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "White",
+      "Pink",
+      "Green"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p44a/400/400",
+      "https://picsum.photos/seed/p44b/400/400",
+      "https://picsum.photos/seed/p44c/400/400",
+      "https://picsum.photos/seed/p44d/400/400"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Biba Analog Watch",
+    "brand": "Biba",
+    "gender": "Men",
+    "category": "Accessories",
+    "subcategory": "Analog Watch",
+    "description": "Premium quality analog watch designed for comfort and style.",
+    "price": 2508,
+    "currency": "INR",
+    "rating": 3,
+    "reviewCount": 262,
+    "stock": 16,
+    "size": [
+      "Free Size"
+    ],
+    "color": [
+      "White",
+      "Green",
+      "Black"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p45a/400/400",
+      "https://picsum.photos/seed/p45b/400/400",
+      "https://picsum.photos/seed/p45c/400/400",
+      "https://picsum.photos/seed/p45d/400/400"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Libas Analog Watch",
+    "brand": "Libas",
+    "gender": "Men",
+    "category": "Accessories",
+    "subcategory": "Analog Watch",
+    "description": "Premium quality analog watch designed for comfort and style.",
+    "price": 6835,
+    "currency": "INR",
+    "rating": 3.5,
+    "reviewCount": 379,
+    "stock": 42,
+    "size": [
+      "Free Size"
+    ],
+    "color": [
+      "Green",
+      "Red",
+      "Grey"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p46a/400/400",
+      "https://picsum.photos/seed/p46b/400/400",
+      "https://picsum.photos/seed/p46c/400/400",
+      "https://picsum.photos/seed/p46d/400/400"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Biba Jeans & Jeggings",
+    "brand": "Biba",
+    "gender": "Women",
+    "category": "Western Wear",
+    "subcategory": "Jeans & Jeggings",
+    "description": "Premium quality jeans & jeggings designed for comfort and style.",
+    "price": 7343,
+    "currency": "INR",
+    "rating": 4,
+    "reviewCount": 295,
+    "stock": 55,
+    "size": [
+      "28",
+      "30",
+      "32",
+      "34"
+    ],
+    "color": [
+      "Pink",
+      "Red",
+      "Black"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p47a/400/400",
+      "https://picsum.photos/seed/p47b/400/400",
+      "https://picsum.photos/seed/p47c/400/400",
+      "https://picsum.photos/seed/p47d/400/400"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "H&M Analog Watch",
+    "brand": "H&M",
+    "gender": "Women",
+    "category": "Accessories",
+    "subcategory": "Analog Watch",
+    "description": "Premium quality analog watch designed for comfort and style.",
+    "price": 5852,
+    "currency": "INR",
+    "rating": 4.5,
+    "reviewCount": 63,
+    "stock": 92,
+    "size": [
+      "Free Size"
+    ],
+    "color": [
+      "Blue",
+      "Pink",
+      "Black"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p48a/400/400",
+      "https://picsum.photos/seed/p48b/400/400",
+      "https://picsum.photos/seed/p48c/400/400",
+      "https://picsum.photos/seed/p48d/400/400"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Fastrack Tops & Shirts",
+    "brand": "Fastrack",
+    "gender": "Women",
+    "category": "Western Wear",
+    "subcategory": "Tops & Shirts",
+    "description": "Premium quality tops & shirts designed for comfort and style.",
+    "price": 7936,
+    "currency": "INR",
+    "rating": 5,
+    "reviewCount": 290,
+    "stock": 41,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Grey",
+      "White",
+      "Blue"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p49a/400/400",
+      "https://picsum.photos/seed/p49b/400/400",
+      "https://picsum.photos/seed/p49c/400/400",
+      "https://picsum.photos/seed/p49d/400/400"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "W for Woman Analog Watch",
+    "brand": "W for Woman",
+    "gender": "Women",
+    "category": "Accessories",
+    "subcategory": "Analog Watch",
+    "description": "Premium quality analog watch designed for comfort and style.",
+    "price": 6694,
+    "currency": "INR",
+    "rating": 2,
+    "reviewCount": 250,
+    "stock": 82,
+    "size": [
+      "Free Size"
+    ],
+    "color": [
+      "White",
+      "Pink",
+      "Black"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p50a/400/400",
+      "https://picsum.photos/seed/p50b/400/400",
+      "https://picsum.photos/seed/p50c/400/400",
+      "https://picsum.photos/seed/p50d/400/400"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Adidas Bags & Backpacks",
+    "brand": "Adidas",
+    "gender": "Men",
+    "category": "Accessories",
+    "subcategory": "Bags & Backpacks",
+    "description": "Premium quality bags & backpacks designed for comfort and style.",
+    "price": 926,
+    "currency": "INR",
+    "rating": 2.5,
+    "reviewCount": 151,
+    "stock": 10,
+    "size": [
+      "Free Size"
+    ],
+    "color": [
+      "Grey",
+      "White",
+      "Blue"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p51a/400/400",
+      "https://picsum.photos/seed/p51b/400/400",
+      "https://picsum.photos/seed/p51c/400/400",
+      "https://picsum.photos/seed/p51d/400/400"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Woodland Jeans",
+    "brand": "Woodland",
+    "gender": "Men",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "description": "Premium quality jeans designed for comfort and style.",
+    "price": 5902,
+    "currency": "INR",
+    "rating": 3,
+    "reviewCount": 276,
+    "stock": 16,
+    "size": [
+      "28",
+      "30",
+      "32",
+      "34"
+    ],
+    "color": [
+      "Blue",
+      "Green",
+      "White"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p52a/400/400",
+      "https://picsum.photos/seed/p52b/400/400",
+      "https://picsum.photos/seed/p52c/400/400",
+      "https://picsum.photos/seed/p52d/400/400"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Woodland Formal Shirts",
+    "brand": "Woodland",
+    "gender": "Men",
+    "category": "Clothing",
+    "subcategory": "Formal Shirts",
+    "description": "Premium quality formal shirts designed for comfort and style.",
+    "price": 5837,
+    "currency": "INR",
+    "rating": 3.5,
+    "reviewCount": 129,
+    "stock": 86,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Grey",
+      "Red",
+      "White"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p53a/400/400",
+      "https://picsum.photos/seed/p53b/400/400",
+      "https://picsum.photos/seed/p53c/400/400",
+      "https://picsum.photos/seed/p53d/400/400"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Puma Bags & Backpacks",
+    "brand": "Puma",
+    "gender": "Men",
+    "category": "Accessories",
+    "subcategory": "Bags & Backpacks",
+    "description": "Premium quality bags & backpacks designed for comfort and style.",
+    "price": 5354,
+    "currency": "INR",
+    "rating": 4,
+    "reviewCount": 418,
+    "stock": 61,
+    "size": [
+      "Free Size"
+    ],
+    "color": [
+      "Grey",
+      "Red",
+      "Green"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p54a/400/400",
+      "https://picsum.photos/seed/p54b/400/400",
+      "https://picsum.photos/seed/p54c/400/400",
+      "https://picsum.photos/seed/p54d/400/400"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Fossil Suits",
+    "brand": "Fossil",
+    "gender": "Men",
+    "category": "Clothing",
+    "subcategory": "Suits",
+    "description": "Premium quality suits designed for comfort and style.",
+    "price": 6678,
+    "currency": "INR",
+    "rating": 4.5,
+    "reviewCount": 400,
+    "stock": 25,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Pink",
+      "White",
+      "Green"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p55a/400/400",
+      "https://picsum.photos/seed/p55b/400/400",
+      "https://picsum.photos/seed/p55c/400/400",
+      "https://picsum.photos/seed/p55d/400/400"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "US Polo Indian & Festive Wear",
+    "brand": "US Polo",
+    "gender": "Men",
+    "category": "Clothing",
+    "subcategory": "Indian & Festive Wear",
+    "description": "Premium quality indian & festive wear designed for comfort and style.",
+    "price": 5501,
+    "currency": "INR",
+    "rating": 5,
+    "reviewCount": 167,
+    "stock": 76,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Pink",
+      "Grey",
+      "Black"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p56a/400/400",
+      "https://picsum.photos/seed/p56b/400/400",
+      "https://picsum.photos/seed/p56c/400/400",
+      "https://picsum.photos/seed/p56d/400/400"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Puma Casual Shirts",
+    "brand": "Puma",
+    "gender": "Men",
+    "category": "Clothing",
+    "subcategory": "Casual Shirts",
+    "description": "Premium quality casual shirts designed for comfort and style.",
+    "price": 2453,
+    "currency": "INR",
+    "rating": 2,
+    "reviewCount": 135,
+    "stock": 38,
+    "size": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color": [
+      "Green",
+      "Red",
+      "Grey"
+    ],
+    "images": [
+      "https://picsum.photos/seed/p57a/400/400",
+      "https://picsum.photos/seed/p57b/400/400",
+      "https://picsum.photos/seed/p57c/400/400",
+      "https://picsum.photos/seed/p57d/400/400"
+    ]
+  }
+]

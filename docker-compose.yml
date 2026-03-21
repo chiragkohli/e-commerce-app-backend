@@ -1,0 +1,131 @@
+version: '3.9'
+
+services:
+  # ─── Infrastructure ───────────────────────────────────────────────────────────
+
+  mongodb:
+    image: mongo:7
+    container_name: ecom-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - ecom-net
+
+  redis:
+    image: redis:7-alpine
+    container_name: ecom-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    networks:
+      - ecom-net
+
+  # ─── Microservices ────────────────────────────────────────────────────────────
+
+  user-service:
+    build:
+      context: .
+      dockerfile: user-service/Dockerfile
+    container_name: ecom-user-service
+    restart: unless-stopped
+    ports:
+      - "5001:5001"
+    environment:
+      PORT: 5001
+      NODE_ENV: production
+    networks:
+      - ecom-net
+
+  cart-service:
+    build:
+      context: .
+      dockerfile: cart-service/Dockerfile
+    container_name: ecom-cart-service
+    restart: unless-stopped
+    ports:
+      - "5002:5002"
+    environment:
+      PORT: 5002
+      NODE_ENV: production
+      MONGODB_CONNECTION_STRING: mongodb://mongodb:27017
+      MONGODB_DATABASE_NAME: ecomasnmnt
+      MONGODB_CART_COLLECTION: carts
+    depends_on:
+      - mongodb
+    networks:
+      - ecom-net
+
+  order-service:
+    build:
+      context: .
+      dockerfile: order-service/Dockerfile
+    container_name: ecom-order-service
+    restart: unless-stopped
+    ports:
+      - "5003:5003"
+    environment:
+      PORT: 5003
+      NODE_ENV: production
+      MONGODB_CONNECTION_STRING: mongodb://mongodb:27017
+      MONGODB_DATABASE_NAME: ecomasnmnt
+      MONGODB_ORDERS_COLLECTION: orders
+    depends_on:
+      - mongodb
+    networks:
+      - ecom-net
+
+  product-service:
+    build:
+      context: .
+      dockerfile: product-service/Dockerfile
+    container_name: ecom-product-service
+    restart: unless-stopped
+    ports:
+      - "5004:5004"
+    environment:
+      PORT: 5004
+      NODE_ENV: production
+      MONGODB_CONNECTION_STRING: mongodb://mongodb:27017
+      MONGODB_DATABASE_NAME: ecomasnmnt
+      MONGODB_PRODUCTS_COLLECTION: products
+      MONGODB_CATEGORIES_COLLECTION: categories
+      REDIS_CONNECTION_STRING: redis:6379
+      REDIS_ENABLED: "false"
+      FORCE_RESEED: "true"
+    depends_on:
+      - mongodb
+      - redis
+    networks:
+      - ecom-net
+
+  search-service:
+    build:
+      context: .
+      dockerfile: search-service/Dockerfile
+    container_name: ecom-search-service
+    restart: unless-stopped
+    ports:
+      - "5005:5005"
+    environment:
+      PORT: 5005
+      NODE_ENV: production
+      MONGODB_CONNECTION_STRING: mongodb://mongodb:27017
+      MONGODB_DATABASE_NAME: ecomasnmnt
+      MONGODB_PRODUCTS_COLLECTION: products
+      FORCE_RESEED: "false"
+      SEARCH_PROVIDER: AdvancedSearch
+      AZURE_SEARCH_ENABLED: "false"
+    depends_on:
+      - mongodb
+    networks:
+      - ecom-net
+
+volumes:
+  mongo-data:
+
+networks:
+  ecom-net:
+    driver: bridge

@@ -1,0 +1,1328 @@
+{
+  "info": {
+    "name": "EcomAssignment – Node.js Microservices",
+    "description": "Complete API collection for all 5 Node.js microservices.\n\n**Quick Start:**\n1. Run `POST /api/auth/login` (UserService).\n2. The test script auto-saves the token to the collection variable `token`.\n3. All protected endpoints (Cart, Order) use that token automatically.\n\n**Mock credentials:**\n- john@example.com / password123\n- jane@example.com / securepass456\n- admin@example.com / admin123",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "userServiceUrl",
+      "value": "http://localhost:5001",
+      "type": "string"
+    },
+    {
+      "key": "cartServiceUrl",
+      "value": "http://localhost:5002",
+      "type": "string"
+    },
+    {
+      "key": "orderServiceUrl",
+      "value": "http://localhost:5003",
+      "type": "string"
+    },
+    {
+      "key": "productServiceUrl",
+      "value": "http://localhost:5004",
+      "type": "string"
+    },
+    {
+      "key": "searchServiceUrl",
+      "value": "http://localhost:5005",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "orderId",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "01 – UserService (port 5001)",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{userServiceUrl}}/health",
+              "host": [
+                "{{userServiceUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            },
+            "description": "Returns service health status. No auth required."
+          }
+        },
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var json = pm.response.json();",
+                  "if (json.success && json.data && json.data.token) {",
+                  "    pm.collectionVariables.set('token', json.data.token);",
+                  "    console.log('Token saved:', json.data.token);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{userServiceUrl}}/api/auth/login",
+              "host": [
+                "{{userServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            },
+            "description": "Login with email and password. The test script automatically stores the returned `token` in the `token` collection variable."
+          }
+        },
+        {
+          "name": "Login – Jane Smith",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"jane@example.com\",\n  \"password\": \"securepass456\"\n}"
+            },
+            "url": {
+              "raw": "{{userServiceUrl}}/api/auth/login",
+              "host": [
+                "{{userServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Login – Admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"admin123\"\n}"
+            },
+            "url": {
+              "raw": "{{userServiceUrl}}/api/auth/login",
+              "host": [
+                "{{userServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Login – Invalid credentials (401)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"wrong@example.com\",\n  \"password\": \"wrongpass\"\n}"
+            },
+            "url": {
+              "raw": "{{userServiceUrl}}/api/auth/login",
+              "host": [
+                "{{userServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"token\": \"{{token}}\"\n}"
+            },
+            "url": {
+              "raw": "{{userServiceUrl}}/api/auth/logout",
+              "host": [
+                "{{userServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "logout"
+              ]
+            },
+            "description": "Invalidates the current token. Uses the `token` collection variable."
+          }
+        }
+      ]
+    },
+    {
+      "name": "02 – CartService (port 5002)",
+      "description": "All endpoints (except /health) require `Authorization: Bearer {{token}}`.",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{cartServiceUrl}}/health",
+              "host": [
+                "{{cartServiceUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Health Check (route)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{cartServiceUrl}}/api/cart/health",
+              "host": [
+                "{{cartServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "cart",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Cart",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{cartServiceUrl}}/api/cart",
+              "host": [
+                "{{cartServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "cart"
+              ]
+            },
+            "description": "Returns the authenticated user's cart. Returns 404 if cart doesn't exist yet."
+          }
+        },
+        {
+          "name": "Add Item to Cart",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": 1,\n  \"productName\": \"Classic Blue Jeans\",\n  \"price\": 1499.99,\n  \"quantity\": 2,\n  \"image\": \"https://example.com/images/jeans.jpg\"\n}"
+            },
+            "url": {
+              "raw": "{{cartServiceUrl}}/api/cart/add",
+              "host": [
+                "{{cartServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "cart",
+                "add"
+              ]
+            },
+            "description": "Adds an item to the cart. If the product already exists, quantity is incremented."
+          }
+        },
+        {
+          "name": "Add Another Item",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": 2,\n  \"productName\": \"White Cotton T-Shirt\",\n  \"price\": 599.00,\n  \"quantity\": 1,\n  \"image\": \"https://example.com/images/tshirt.jpg\"\n}"
+            },
+            "url": {
+              "raw": "{{cartServiceUrl}}/api/cart/add",
+              "host": [
+                "{{cartServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "cart",
+                "add"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Remove Item from Cart",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": 2\n}"
+            },
+            "url": {
+              "raw": "{{cartServiceUrl}}/api/cart/remove",
+              "host": [
+                "{{cartServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "cart",
+                "remove"
+              ]
+            },
+            "description": "Removes the item with the given productId. Deletes the cart document if no items remain."
+          }
+        },
+        {
+          "name": "Merge Cart (guest → user)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    {\n      \"productId\": 10,\n      \"productName\": \"Running Shoes\",\n      \"price\": 3499.00,\n      \"quantity\": 1,\n      \"image\": \"https://example.com/images/shoes.jpg\"\n    },\n    {\n      \"productId\": 11,\n      \"productName\": \"Sports Cap\",\n      \"price\": 299.00,\n      \"quantity\": 3\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{cartServiceUrl}}/api/cart/merge",
+              "host": [
+                "{{cartServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "cart",
+                "merge"
+              ]
+            },
+            "description": "Replaces the user's cart with the provided guest items (used when a guest logs in). Returns merged cart + item count."
+          }
+        },
+        {
+          "name": "Clear Cart",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{cartServiceUrl}}/api/cart/clear",
+              "host": [
+                "{{cartServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "cart",
+                "clear"
+              ]
+            },
+            "description": "Deletes the entire cart for the authenticated user."
+          }
+        }
+      ]
+    },
+    {
+      "name": "03 – OrderService (port 5003)",
+      "description": "All endpoints (except /health) require `Authorization: Bearer {{token}}`.",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{orderServiceUrl}}/health",
+              "host": [
+                "{{orderServiceUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Health Check (route)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{orderServiceUrl}}/api/orders/health",
+              "host": [
+                "{{orderServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "orders",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Order",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var json = pm.response.json();",
+                  "if (json.success && json.data && json.data.id) {",
+                  "    pm.collectionVariables.set('orderId', json.data.id);",
+                  "    console.log('Order ID saved:', json.data.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    {\n      \"productId\": 1,\n      \"productName\": \"Classic Blue Jeans\",\n      \"unitPrice\": 1499.99,\n      \"quantity\": 2,\n      \"lineTotal\": 2999.98,\n      \"imageUrl\": \"https://example.com/images/jeans.jpg\"\n    },\n    {\n      \"productId\": 2,\n      \"productName\": \"White Cotton T-Shirt\",\n      \"unitPrice\": 599.00,\n      \"quantity\": 1,\n      \"lineTotal\": 599.00\n    }\n  ],\n  \"shippingAddress\": {\n    \"street\": \"123 Main St\",\n    \"city\": \"Mumbai\",\n    \"state\": \"MH\",\n    \"postalCode\": \"400001\",\n    \"country\": \"India\",\n    \"phoneNumber\": \"+91-9876543210\"\n  },\n  \"billingAddress\": {\n    \"street\": \"123 Main St\",\n    \"city\": \"Mumbai\",\n    \"state\": \"MH\",\n    \"postalCode\": \"400001\",\n    \"country\": \"India\"\n  },\n  \"paymentMethod\": \"Credit Card\",\n  \"shippingCost\": 99.00,\n  \"taxAmount\": 359.79,\n  \"notes\": \"Please leave at door\"\n}"
+            },
+            "url": {
+              "raw": "{{orderServiceUrl}}/api/orders",
+              "host": [
+                "{{orderServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "orders"
+              ]
+            },
+            "description": "Creates a new order. The test script saves the returned order ID to the `orderId` variable."
+          }
+        },
+        {
+          "name": "Get My Orders (paginated)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{orderServiceUrl}}/api/orders?page=1&pageSize=10",
+              "host": [
+                "{{orderServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "orders"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Returns paginated orders for the authenticated user, sorted by createdAt desc."
+          }
+        },
+        {
+          "name": "Get Order by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{orderServiceUrl}}/api/orders/{{orderId}}",
+              "host": [
+                "{{orderServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "orders",
+                "{{orderId}}"
+              ]
+            },
+            "description": "Returns a specific order. Only the owner can access it (ownership enforced by userId check)."
+          }
+        },
+        {
+          "name": "Get My Orders – Page 2",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{orderServiceUrl}}/api/orders?page=2&pageSize=5",
+              "host": [
+                "{{orderServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "orders"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "2"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "5"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "04 – ProductService (port 5004)",
+      "description": "No authentication required for any endpoint.",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{productServiceUrl}}/health",
+              "host": [
+                "{{productServiceUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Products",
+          "item": [
+            {
+              "name": "Get Product by ID",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{productServiceUrl}}/api/products/1",
+                  "host": [
+                    "{{productServiceUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "products",
+                    "1"
+                  ]
+                },
+                "description": "Fetches a product by its integer ID. Results are cached (if Redis is enabled)."
+              }
+            },
+            {
+              "name": "Get Product by ID – Not Found (404)",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{productServiceUrl}}/api/products/999999",
+                  "host": [
+                    "{{productServiceUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "products",
+                    "999999"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Categories",
+          "item": [
+            {
+              "name": "Get All Categories",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{productServiceUrl}}/api/categories",
+                  "host": [
+                    "{{productServiceUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categories"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Get Root Categories",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{productServiceUrl}}/api/categories/root",
+                  "host": [
+                    "{{productServiceUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categories",
+                    "root"
+                  ]
+                },
+                "description": "Returns only top-level categories (parentId = null)."
+              }
+            },
+            {
+              "name": "Get Filters List (hardcoded + DB brands)",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{productServiceUrl}}/api/categories/filters-list",
+                  "host": [
+                    "{{productServiceUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categories",
+                    "filters-list"
+                  ]
+                },
+                "description": "Returns a hardcoded filters object:\n- Sizes: S, M, L, XL, Free Size, 28, 30, 32, 34\n- Colors: Black, Blue, Green, Grey, Pink, Red, White\n- Ratings: 2, 3, 4, 5\n- MinPrice: 0, MaxPrice: 10000\n- Brands and Categories from DB"
+              }
+            },
+            {
+              "name": "Get Filter Options (with counts)",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{productServiceUrl}}/api/categories/filter-options",
+                  "host": [
+                    "{{productServiceUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categories",
+                    "filter-options"
+                  ]
+                },
+                "description": "Returns full filter options with document counts per category, brand, color, and rating bucket."
+              }
+            },
+            {
+              "name": "Get Categories by Parent ID",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{productServiceUrl}}/api/categories/parent/1",
+                  "host": [
+                    "{{productServiceUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categories",
+                    "parent",
+                    "1"
+                  ]
+                },
+                "description": "Returns child categories for the given parentId."
+              }
+            },
+            {
+              "name": "Get Category by ID",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{productServiceUrl}}/api/categories/1",
+                  "host": [
+                    "{{productServiceUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categories",
+                    "1"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "05 – SearchService (port 5005)",
+      "description": "No authentication required. Supports full-text + faceted search.\n\n**sortBy values:** 0=RelevanceScore, 1=PriceLowHigh, 2=PriceHighLow, 3=Newest, 4=TopRated",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/health",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search – All Products (default)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?page=1&size=20",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            },
+            "description": "Returns all products paginated with default sorting (RelevanceScore)."
+          }
+        },
+        {
+          "name": "Search – By Query Text",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?query=t-shirt&page=1&size=20",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "query",
+                  "value": "t-shirt"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search – Filter by Category",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?category=Topwear&page=1&size=20",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "Topwear"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search – Filter by Multiple Categories",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?category=Topwear,Bottomwear&page=1&size=20",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "Topwear,Bottomwear"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search – Filter by Brand",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?brands=Nike&page=1&size=20",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "brands",
+                  "value": "Nike"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search – Price Range",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?priceMin=500&priceMax=2000&page=1&size=20",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "priceMin",
+                  "value": "500"
+                },
+                {
+                  "key": "priceMax",
+                  "value": "2000"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search – Min Rating Filter",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?minRating=4&page=1&size=20",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "minRating",
+                  "value": "4"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search – Filter by Colors",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?colors=Black,Blue&page=1&size=20",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "colors",
+                  "value": "Black,Blue"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search – Filter by Sizes",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?sizes=S,M&page=1&size=20",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "sizes",
+                  "value": "S,M"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search – Filter by Gender",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?gender=Men&page=1&size=20",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "gender",
+                  "value": "Men"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search – In Stock Only",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?inStockOnly=true&page=1&size=20",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "inStockOnly",
+                  "value": "true"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search – Sort by Price Low→High",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?sortBy=1&page=1&size=20",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "sortBy",
+                  "value": "1"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            },
+            "description": "sortBy: 0=RelevanceScore, 1=PriceLowHigh, 2=PriceHighLow, 3=Newest, 4=TopRated"
+          }
+        },
+        {
+          "name": "Search – Sort by Price High→Low",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?sortBy=2&page=1&size=20",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "sortBy",
+                  "value": "2"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search – Sort by Top Rated",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?sortBy=4&page=1&size=20",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "sortBy",
+                  "value": "4"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search – Combined Filters",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?query=shirt&category=Topwear&priceMin=300&priceMax=3000&minRating=3&inStockOnly=true&sortBy=4&page=1&size=20",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "query",
+                  "value": "shirt"
+                },
+                {
+                  "key": "category",
+                  "value": "Topwear"
+                },
+                {
+                  "key": "priceMin",
+                  "value": "300"
+                },
+                {
+                  "key": "priceMax",
+                  "value": "3000"
+                },
+                {
+                  "key": "minRating",
+                  "value": "3"
+                },
+                {
+                  "key": "inStockOnly",
+                  "value": "true"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "4"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            },
+            "description": "Demonstrates all filters combined: text query + category + price range + min rating + in-stock + sort by top rated."
+          }
+        },
+        {
+          "name": "Search – Pagination (page 2)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?page=2&size=10",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "2"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search – Invalid size (400)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{searchServiceUrl}}/api/search?size=0",
+              "host": [
+                "{{searchServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "size",
+                  "value": "0"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "parentId": null,
+    "name": "Women",
+    "gender": "Women",
+    "type": "Gender"
+  },
+  {
+    "id": 2,
+    "parentId": null,
+    "name": "Men",
+    "gender": "Men",
+    "type": "Gender"
+  },
+  {
+    "id": 3,
+    "parentId": 1,
+    "name": "Indian Wear",
+    "gender": "Women",
+    "type": "Category"
+  },
+  {
+    "id": 4,
+    "parentId": 1,
+    "name": "Western Wear",
+    "gender": "Women",
+    "type": "Category"
+  },
+  {
+    "id": 5,
+    "parentId": 1,
+    "name": "Accessories",
+    "gender": "Women",
+    "type": "Category"
+  },
+  {
+    "id": 6,
+    "parentId": 2,
+    "name": "Indian Wear",
+    "gender": "Men",
+    "type": "Category"
+  },
+  {
+    "id": 7,
+    "parentId": 2,
+    "name": "Western Wear",
+    "gender": "Men",
+    "type": "Category"
+  },
+  {
+    "id": 8,
+    "parentId": 2,
+    "name": "Clothing",
+    "gender": "Men",
+    "type": "Category"
+  },
+  {
+    "id": 9,
+    "parentId": 2,
+    "name": "Accessories",
+    "gender": "Men",
+    "type": "Category"
+  },
+  {
+    "id": 10,
+    "parentId": 3,
+    "name": "Kurtas & Suits",
+    "gender": "Women",
+    "type": "SubCategory"
+  },
+  {
+    "id": 11,
+    "parentId": 3,
+    "name": "Kurtis & Tunics",
+    "gender": "Women",
+    "type": "SubCategory"
+  },
+  {
+    "id": 12,
+    "parentId": 3,
+    "name": "Sarees & Blouses",
+    "gender": "Women",
+    "type": "SubCategory"
+  },
+  {
+    "id": 13,
+    "parentId": 4,
+    "name": "Dresses & Jumpsuits",
+    "gender": "Women",
+    "type": "SubCategory"
+  },
+  {
+    "id": 14,
+    "parentId": 4,
+    "name": "Jeans & Jeggings",
+    "gender": "Women",
+    "type": "SubCategory"
+  },
+  {
+    "id": 15,
+    "parentId": 4,
+    "name": "Tops & Shirts",
+    "gender": "Women",
+    "type": "SubCategory"
+  },
+  {
+    "id": 16,
+    "parentId": 5,
+    "name": "Analog Watch",
+    "gender": "Women",
+    "type": "SubCategory"
+  },
+  {
+    "id": 17,
+    "parentId": 5,
+    "name": "Sunglasses",
+    "gender": "Women",
+    "type": "SubCategory"
+  },
+  {
+    "id": 18,
+    "parentId": 6,
+    "name": "Kurtas & Suits",
+    "gender": "Men",
+    "type": "SubCategory"
+  },
+  {
+    "id": 19,
+    "parentId": 6,
+    "name": "Pants & Shirts",
+    "gender": "Men",
+    "type": "SubCategory"
+  },
+  {
+    "id": 20,
+    "parentId": 7,
+    "name": "Dresses & Jumpsuits",
+    "gender": "Men",
+    "type": "SubCategory"
+  },
+  {
+    "id": 21,
+    "parentId": 7,
+    "name": "Jeans & Jeggings",
+    "gender": "Men",
+    "type": "SubCategory"
+  },
+  {
+    "id": 22,
+    "parentId": 7,
+    "name": "Tops & Shirts",
+    "gender": "Men",
+    "type": "SubCategory"
+  },
+  {
+    "id": 23,
+    "parentId": 8,
+    "name": "Casual Shirts",
+    "gender": "Men",
+    "type": "SubCategory"
+  },
+  {
+    "id": 24,
+    "parentId": 8,
+    "name": "Formal Shirts",
+    "gender": "Men",
+    "type": "SubCategory"
+  },
+  {
+    "id": 25,
+    "parentId": 8,
+    "name": "Indian & Festive Wear",
+    "gender": "Men",
+    "type": "SubCategory"
+  },
+  {
+    "id": 26,
+    "parentId": 8,
+    "name": "Jeans",
+    "gender": "Men",
+    "type": "SubCategory"
+  },
+  {
+    "id": 27,
+    "parentId": 8,
+    "name": "Suits",
+    "gender": "Men",
+    "type": "SubCategory"
+  },
+  {
+    "id": 28,
+    "parentId": 9,
+    "name": "Analog Watch",
+    "gender": "Men",
+    "type": "SubCategory"
+  },
+  {
+    "id": 29,
+    "parentId": 9,
+    "name": "Bags & Backpacks",
+    "gender": "Men",
+    "type": "SubCategory"
+  },
+  {
+    "id": 30,
+    "parentId": 9,
+    "name": "Sunglasses",
+    "gender": "Men",
+    "type": "SubCategory"
+  }
+]
