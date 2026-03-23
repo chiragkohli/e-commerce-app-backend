@@ -49,6 +49,76 @@ class ProductService {
     return dto;
   }
 
+  /**
+   * Get all products with pagination (optimized with DB-level skip/limit)
+   * @param {number} page - 1-based page number
+   * @param {number} pageSize - Items per page (1-200)
+   * @returns {object} { products: [], pagination: {} }
+   */
+  async getAllProducts(page = 1, pageSize = 10) {
+    // Input validation
+    let validPage = parseInt(page, 10);
+    let validPageSize = parseInt(pageSize, 10);
+
+    // Validate page
+    if (isNaN(validPage) || validPage < 1) {
+      console.warn('[ProductService] Invalid page:', page, '- using default 1');
+      validPage = 1;
+    }
+
+    // Validate pageSize (1-200 range)
+    if (isNaN(validPageSize) || validPageSize < 1) {
+      console.warn('[ProductService] Invalid pageSize:', pageSize, '- using default 10');
+      validPageSize = 10;
+    } else if (validPageSize > 200) {
+      console.warn('[ProductService] PageSize exceeds max (200) - capping to 200');
+      validPageSize = 200;
+    }
+
+    const cacheKey = `products:all:${validPage}:${validPageSize}`;
+    const cached = await this._cache.getAsync(cacheKey);
+    if (cached) {
+      console.log(`[ProductService] Cache hit for products page ${validPage}`);
+      return cached;
+    }
+
+    // Fetch from database with skip/limit (optimized)
+    const { products: rawProducts, totalCount } = await productRepository.getPaginated(validPage, validPageSize);
+
+    // Clamp page to valid range if result is empty (user requested beyond available pages)
+    const maxPage = Math.ceil(totalCount / validPageSize) || 1;
+    let safePage = validPage;
+    if (totalCount > 0 && validPage > maxPage) {
+      console.warn(
+        `[ProductService] Requested page ${validPage} exceeds max page ${maxPage} - clamping to ${maxPage}`
+      );
+      safePage = maxPage;
+      // Re-fetch the last page
+      const { products: lastPageProducts } = await productRepository.getPaginated(safePage, validPageSize);
+      const mappedProducts = lastPageProducts.map(toProductResponseDto);
+      const PaginationHelper = require('@ecom/shared/utils/PaginationHelper');
+      const pagination = PaginationHelper.buildMetadata(safePage, validPageSize, totalCount);
+      const result = { products: mappedProducts, pagination };
+      await this._cache.setAsync(cacheKey, result);
+      return result;
+    }
+
+    // Map products to DTOs
+    const products = rawProducts.map(toProductResponseDto);
+
+    const PaginationHelper = require('@ecom/shared/utils/PaginationHelper');
+    const pagination = PaginationHelper.buildMetadata(validPage, validPageSize, totalCount);
+
+    const result = { products, pagination };
+    await this._cache.setAsync(cacheKey, result);
+
+    console.log(
+      `[ProductService] Fetched products - page: ${validPage}/${maxPage}, items: ${products.length}/${totalCount}`
+    );
+
+    return result;
+  }
+
   async searchWithFilters(reqQuery) {
     const filter = new SearchFilter({
       query: reqQuery.query || null,

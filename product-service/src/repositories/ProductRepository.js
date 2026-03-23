@@ -62,6 +62,24 @@ class ProductRepository {
   }
 
   /**
+   * Get products with database-level pagination (optimized)
+   * @param {number} page - 1-based page number
+   * @param {number} pageSize - Items per page
+   * @returns {{ products: object[], totalCount: number }}
+   */
+  async getPaginated(page = 1, pageSize = 10) {
+    const skip = (page - 1) * pageSize;
+    const coll = PRODUCTS();
+
+    const [products, totalCount] = await Promise.all([
+      coll.find({}).skip(skip).limit(pageSize).toArray(),
+      coll.countDocuments({}),
+    ]);
+
+    return { products, totalCount };
+  }
+
+  /**
    * Full-featured search with filters.
    * @param {SearchFilter} filter
    * @returns {{ products: object[], totalCount: number }}

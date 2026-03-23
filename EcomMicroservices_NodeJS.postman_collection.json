@@ -629,6 +629,60 @@
           "name": "Products",
           "item": [
             {
+              "name": "Get All Products (Paginated)",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{productServiceUrl}}/api/products?page=1&pageSize=10",
+                  "host": [
+                    "{{productServiceUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "products"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "10"
+                    }
+                  ]
+                },
+                "description": "Fetches all products with pagination support. Default: page=1, pageSize=10. Max pageSize=200. Results are cached (if Redis is enabled)."
+              }
+            },
+            {
+              "name": "Get All Products - Page 2",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{productServiceUrl}}/api/products?page=2&pageSize=20",
+                  "host": [
+                    "{{productServiceUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "products"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "2"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "20"
+                    }
+                  ]
+                },
+                "description": "Example: Get second page with 20 items per page."
+              }
+            },
+            {
               "name": "Get Product by ID",
               "request": {
                 "method": "GET",

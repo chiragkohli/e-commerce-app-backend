@@ -81,6 +81,7 @@ Handles user authentication and authorization.
 Manages products and categories with caching.
 
 **Endpoints:**
+- `GET /api/products` - Get all products (paginated)
 - `GET /api/products/:id` - Get product by ID
 - `GET /api/categories` - Get all categories
 - `GET /api/categories/root` - Get root categories
@@ -90,7 +91,7 @@ Manages products and categories with caching.
 - `GET /health` - Health check
 
 **Database:** MongoDB
-**Features:** Redis caching (optional), automatic seeding
+**Features:** Redis caching (optional), automatic seeding, pagination support
 
 ---
 
@@ -282,20 +283,64 @@ curl -X POST http://localhost:5001/api/auth/login \
 
 ### **2. Product Service (Port 5004)**
 
-| Method | Endpoint | Auth | Description |
-|--------|----------|------|-------------|
-| GET | `/api/products/:id` | ❌ | Get product by ID |
-| GET | `/api/categories` | ❌ | Get all categories |
-| GET | `/api/categories/root` | ❌ | Get root categories |
-| GET | `/api/categories/filters-list` | ❌ | Get available filters |
-| GET | `/api/categories/filter-options` | ❌ | Get filter options |
-| GET | `/api/categories/:id` | ❌ | Get category by ID |
-| GET | `/health` | ❌ | Health check |
+| Method | Endpoint | Auth | Description | Query Params |
+|--------|----------|------|-------------|--------------|
+| GET | `/api/products` | ❌ | Get all products with pagination | `page`, `pageSize` |
+| GET | `/api/products/:id` | ❌ | Get product by ID | - |
+| GET | `/api/categories` | ❌ | Get all categories | - |
+| GET | `/api/categories/root` | ❌ | Get root categories | - |
+| GET | `/api/categories/filters-list` | ❌ | Get available filters | - |
+| GET | `/api/categories/filter-options` | ❌ | Get filter options | - |
+| GET | `/api/categories/:id` | ❌ | Get category by ID | - |
+| GET | `/health` | ❌ | Health check | - |
+
+**GET /api/products - Query Parameters:**
+- `page` - Page number (default: 1, min: 1)
+- `pageSize` - Items per page (default: 10, max: 200)
 
 **Example:**
 ```bash
+# Get first 10 products (default)
+curl http://localhost:5004/api/products
+
+# Get products with custom pagination
+curl "http://localhost:5004/api/products?page=1&pageSize=20"
+
+# Get second page
+curl "http://localhost:5004/api/products?page=2&pageSize=10"
+
+# Get product by ID
+curl http://localhost:5004/api/products/123
+
+# Get all categories
 curl http://localhost:5004/api/categories
-curl http://localhost:5004/api/products/product-id
+```
+
+**Response Example (GET /api/products):**
+```json
+{
+  "success": true,
+  "message": "Retrieved 10 of 250 products",
+  "data": [
+    {
+      "id": 1,
+      "name": "Product Name",
+      "brand": "Brand",
+      "category": "electronics",
+      "price": 999,
+      "rating": 4.5,
+      "inStock": true
+    }
+  ],
+  "pagination": {
+    "currentPage": 1,
+    "pageSize": 10,
+    "totalRecords": 250,
+    "totalPages": 25,
+    "hasNextPage": true,
+    "hasPreviousPage": false
+  }
+}
 ```
 
 ---
@@ -396,8 +441,18 @@ TOKEN=$(curl -s -X POST http://localhost:5001/api/auth/login \
   -d '{"email":"john@example.com","password":"password123"}' | jq -r '.token')
 ```
 
-2. **Get Products:**
+2. **Get Products (with pagination):**
 ```bash
+# Default pagination (page 1, 10 items)
+curl http://localhost:5004/api/products
+
+# Custom pagination
+curl "http://localhost:5004/api/products?page=1&pageSize=20"
+
+# Get second page
+curl "http://localhost:5004/api/products?page=2&pageSize=10"
+
+# Get all categories
 curl http://localhost:5004/api/categories
 ```
 
