@@ -145,38 +145,7 @@ async function proxyRequest(service, req, res, attempt = 1) {
   }
 }
 
-/**
- * Main request handler
- */
-app.all('*', async (req, res) => {
-  // Block direct requests to gateway root
-  if (req.path === '/') {
-    return res.json({
-      success: true,
-      message: 'API Gateway is running',
-      version: '1.0.0',
-      services: config.services.map(s => ({
-        name: s.name,
-        healthy: serviceHealth[s.name].healthy,
-        routes: s.routes,
-      })),
-    });
-  }
-
-  const service = findServiceForPath(req.path);
-
-  if (!service) {
-    return res.status(404).json({
-      success: false,
-      message: 'Route not found',
-      availableRoutes: config.services.flatMap(s => s.routes),
-    });
-  }
-
-  return proxyRequest(service, req, res);
-});
-
-// ─── Gateway Status Endpoint ───────────────────────────────────────
+// ─── Gateway Status Endpoint (MUST be before catch-all) ───────────
 
 app.get('/gateway/status', (req, res) => {
   const status = {
@@ -197,6 +166,38 @@ app.get('/gateway/status', (req, res) => {
   });
 
   res.json(status);
+});
+
+// ─── Gateway Root Endpoint ─────────────────────────────────────────
+
+app.get('/', (req, res) => {
+  return res.json({
+    success: true,
+    message: 'API Gateway is running',
+    version: '1.0.0',
+    services: config.services.map(s => ({
+      name: s.name,
+      healthy: serviceHealth[s.name].healthy,
+      routes: s.routes,
+    })),
+  });
+});
+
+/**
+ * Main request handler (MUST be last - catch-all)
+ */
+app.all('*', async (req, res) => {
+  const service = findServiceForPath(req.path);
+
+  if (!service) {
+    return res.status(404).json({
+      success: false,
+      message: 'Route not found',
+      availableRoutes: config.services.flatMap(s => s.routes),
+    });
+  }
+
+  return proxyRequest(service, req, res);
 });
 
 // ─── Error Handler ────────────────────────────────────────────────
