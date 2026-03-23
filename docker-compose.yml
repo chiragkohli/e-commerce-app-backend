@@ -23,6 +23,33 @@ services:
     networks:
       - ecom-net
 
+  # ─── API Gateway ──────────────────────────────────────────────────────────
+
+  api-gateway:
+    build:
+      context: .
+      dockerfile: api-gateway/Dockerfile
+    container_name: ecom-api-gateway
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      NODE_ENV: production
+      USER_SERVICE_URL: http://user-service:5001
+      PRODUCT_SERVICE_URL: http://product-service:5004
+      CART_SERVICE_URL: http://cart-service:5002
+      ORDER_SERVICE_URL: http://order-service:5003
+      SEARCH_SERVICE_URL: http://search-service:5005
+    depends_on:
+      - user-service
+      - product-service
+      - cart-service
+      - order-service
+      - search-service
+    networks:
+      - ecom-net
+
   # ─── Microservices ────────────────────────────────────────────────────────────
 
   user-service:
