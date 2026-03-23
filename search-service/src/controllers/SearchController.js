@@ -3,7 +3,7 @@
 const { Router } = require('express');
 
 /**
- * SearchController – mirrors SearchService.API.Controllers.SearchController
+ * SearchController - mirrors SearchService.API.Controllers.SearchController
  * Base route: /api/search
  * No authentication required.
  */

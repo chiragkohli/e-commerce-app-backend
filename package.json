@@ -12,16 +12,16 @@
     "search-service"
   ],
   "scripts": {
-    "start:user": "npm --workspace=user-service    start",
-    "start:cart": "npm --workspace=cart-service    start",
-    "start:order": "npm --workspace=order-service   start",
+    "start:user": "npm --workspace=user-service start",
+    "start:cart": "npm --workspace=cart-service start",
+    "start:order": "npm --workspace=order-service start",
     "start:product": "npm --workspace=product-service start",
-    "start:search": "npm --workspace=search-service  start",
-    "dev:user": "npm --workspace=user-service    run dev",
-    "dev:cart": "npm --workspace=cart-service    run dev",
-    "dev:order": "npm --workspace=order-service   run dev",
+    "start:search": "npm --workspace=search-service start",
+    "dev:user": "npm --workspace=user-service run dev",
+    "dev:cart": "npm --workspace=cart-service run dev",
+    "dev:order": "npm --workspace=order-service run dev",
     "dev:product": "npm --workspace=product-service run dev",
-    "dev:search": "npm --workspace=search-service  run dev"
+    "dev:search": "npm --workspace=search-service run dev"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"

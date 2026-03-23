@@ -20,7 +20,7 @@ async function connect() {
 }
 
 function getDb() {
-  if (!_db) throw new Error('MongoDB not connected – call connect() first');
+  if (!_db) throw new Error('MongoDB not connected - call connect() first');
   return _db;
 }
 

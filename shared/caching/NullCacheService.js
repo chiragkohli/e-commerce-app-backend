@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Null Object cache service – no-ops for all methods.
+ * Null Object cache service - no-ops for all methods.
  * Used when Redis is disabled or unavailable.
  */
 class NullCacheService {

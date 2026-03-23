@@ -1,7 +1,7 @@
 {
   "name": "search-service",
   "version": "1.0.0",
-  "description": "SearchService – product search with Azure AI Search or in-memory engine",
+  "description": "SearchService - product search with Azure AI Search or in-memory engine",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",

@@ -4,7 +4,7 @@ const axios = require('axios');
 const Product = require('../models/Product');
 
 /**
- * Azure AI Search client – mirrors Shared.Core.Search.Services.AzureSearchClient
+ * Azure AI Search client - mirrors Shared.Core.Search.Services.AzureSearchClient
  * Uses Azure AI Search REST API (v2024-07-01)
  */
 class AzureSearchClient {

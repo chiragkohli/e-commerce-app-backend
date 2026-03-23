@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Canonical product model – mirrors Shared.Core.Models.Product
+ * Canonical product model - mirrors Shared.Core.Models.Product
  * Used by all services that touch the "products" collection.
  */
 class Product {

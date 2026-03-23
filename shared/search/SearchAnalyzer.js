@@ -9,7 +9,7 @@ const STOP_WORDS = new Set([
 ]);
 
 /**
- * SearchAnalyzer – mirrors Shared.Core.Search.Services.SearchAnalyzer
+ * SearchAnalyzer - mirrors Shared.Core.Search.Services.SearchAnalyzer
  * Pipeline: normalize → tokenize → lowercase → remove stopwords → stem
  */
 class SearchAnalyzer {

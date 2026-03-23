@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Mock user store – mirrors UserService.API.Data.MockUserData
+ * Mock user store - mirrors UserService.API.Data.MockUserData
  * Passwords are stored in plain-text for demo purposes ONLY.
  */
 const MOCK_USERS = Object.freeze([

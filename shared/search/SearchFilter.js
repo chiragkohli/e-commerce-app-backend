@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * SearchFilter – mirrors Shared.Core.Search.SearchFilter
+ * SearchFilter - mirrors Shared.Core.Search.SearchFilter
  * Passed between controllers, services, and repositories.
  */
 class SearchFilter {

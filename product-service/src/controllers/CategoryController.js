@@ -3,7 +3,7 @@
 const { Router } = require('express');
 
 /**
- * CategoryController – mirrors ProductService.API.Controllers.CategoryController
+ * CategoryController - mirrors ProductService.API.Controllers.CategoryController
  * Base route: /api/categories
  * No authentication required.
  */

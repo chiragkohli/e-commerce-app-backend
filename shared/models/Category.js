@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Category model – mirrors Shared.Core.Models.Category
+ * Category model - mirrors Shared.Core.Models.Category
  */
 class Category {
   constructor(doc = {}) {

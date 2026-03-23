@@ -1,7 +1,7 @@
 {
   "name": "cart-service",
   "version": "1.0.0",
-  "description": "CartService – per-user shopping cart backed by MongoDB",
+  "description": "CartService - per-user shopping cart backed by MongoDB",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",

@@ -10,7 +10,7 @@ class PaginationHelper {
    * @template T
    * @param {T[]}   items
    * @param {number} pageNumber  1-based (clamped to >= 1)
-   * @param {number} pageSize    1–1000
+   * @param {number} pageSize    1-1000
    * @returns {{ items: T[], metadata: PaginationMetadata }}
    */
   static paginate(items, pageNumber = 1, pageSize = 50) {

@@ -2,7 +2,7 @@
 
 const SearchAnalyzer = require('./SearchAnalyzer');
 
-// Scoring weights – mirrors Shared.Core.Search.Services.AdvancedSearchEngine
+// Scoring weights - mirrors Shared.Core.Search.Services.AdvancedSearchEngine
 const WEIGHTS = {
   name: 3.0,
   brand: 2.0,
@@ -71,7 +71,7 @@ class AdvancedSearchEngine {
 
   /**
    * @param {import('../models/Product')} product
-   * @param {string[]} tokens – already analyzed tokens
+   * @param {string[]} tokens - already analyzed tokens
    * @returns {number} relevance score
    */
   _score(product, tokens) {

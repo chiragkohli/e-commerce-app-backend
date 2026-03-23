@@ -1,7 +1,7 @@
 {
   "name": "order-service",
   "version": "1.0.0",
-  "description": "OrderService – order management backed by MongoDB",
+  "description": "OrderService - order management backed by MongoDB",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",

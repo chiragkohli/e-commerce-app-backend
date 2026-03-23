@@ -3,7 +3,7 @@
 const VALID_STATUSES = ['Pending', 'Confirmed', 'Shipped', 'Delivered', 'Cancelled'];
 
 /**
- * Order utility helpers – mirrors OrderService.API.Utilities.OrderHelpers
+ * Order utility helpers - mirrors OrderService.API.Utilities.OrderHelpers
  */
 function generateOrderNumber() {
   const now = new Date();

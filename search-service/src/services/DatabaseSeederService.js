@@ -12,7 +12,7 @@ async function seedDatabase() {
 
     const existingCount = await productColl.countDocuments();
     if (existingCount > 0 && !forceReseed) {
-      console.log('[SearchService] Database already seeded – skipping');
+      console.log('[SearchService] Database already seeded - skipping');
       return;
     }
 
@@ -25,7 +25,7 @@ async function seedDatabase() {
         console.log(`[SearchService] Seeded ${products.length} products`);
       }
     } else {
-      console.warn('[SearchService] products.json not found – skipping product seeding');
+      console.warn('[SearchService] products.json not found - skipping product seeding');
     }
   } catch (err) {
     console.error('[SearchService] Seeding error:', err);
