@@ -37,15 +37,11 @@ services:
       PORT: 3000
       NODE_ENV: production
       USER_SERVICE_URL: http://user-service:5001
-      PRODUCT_SERVICE_URL: http://product-service:5004
-      CART_SERVICE_URL: http://cart-service:5002
-      ORDER_SERVICE_URL: http://order-service:5003
-      SEARCH_SERVICE_URL: http://search-service:5005
+      PRODUCT_SERVICE_URL: http://product-service:5002
+      SEARCH_SERVICE_URL: http://search-service:5003
     depends_on:
       - user-service
       - product-service
-      - cart-service
-      - order-service
       - search-service
     networks:
       - ecom-net
@@ -66,44 +62,6 @@ services:
     networks:
       - ecom-net
 
-  cart-service:
-    build:
-      context: .
-      dockerfile: cart-service/Dockerfile
-    container_name: ecom-cart-service
-    restart: unless-stopped
-    ports:
-      - "5002:5002"
-    environment:
-      PORT: 5002
-      NODE_ENV: production
-      MONGODB_CONNECTION_STRING: mongodb://mongodb:27017
-      MONGODB_DATABASE_NAME: ecomasnmnt
-      MONGODB_CART_COLLECTION: carts
-    depends_on:
-      - mongodb
-    networks:
-      - ecom-net
-
-  order-service:
-    build:
-      context: .
-      dockerfile: order-service/Dockerfile
-    container_name: ecom-order-service
-    restart: unless-stopped
-    ports:
-      - "5003:5003"
-    environment:
-      PORT: 5003
-      NODE_ENV: production
-      MONGODB_CONNECTION_STRING: mongodb://mongodb:27017
-      MONGODB_DATABASE_NAME: ecomasnmnt
-      MONGODB_ORDERS_COLLECTION: orders
-    depends_on:
-      - mongodb
-    networks:
-      - ecom-net
-
   product-service:
     build:
       context: .
@@ -111,9 +69,9 @@ services:
     container_name: ecom-product-service
     restart: unless-stopped
     ports:
-      - "5004:5004"
+      - "5002:5002"
     environment:
-      PORT: 5004
+      PORT: 5002
       NODE_ENV: production
       MONGODB_CONNECTION_STRING: mongodb://mongodb:27017
       MONGODB_DATABASE_NAME: ecomasnmnt
@@ -135,9 +93,9 @@ services:
     container_name: ecom-search-service
     restart: unless-stopped
     ports:
-      - "5005:5005"
+      - "5003:5003"
     environment:
-      PORT: 5005
+      PORT: 5003
       NODE_ENV: production
       MONGODB_CONNECTION_STRING: mongodb://mongodb:27017
       MONGODB_DATABASE_NAME: ecomasnmnt

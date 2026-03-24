@@ -7,5 +7,5 @@ RUN npm install --workspace=shared --workspace=search-service --ignore-scripts
 COPY shared/ ./shared/
 COPY search-service/ ./search-service/
 WORKDIR /app/search-service
-EXPOSE 5005
+EXPOSE 5003
 CMD ["node", "src/app.js"]

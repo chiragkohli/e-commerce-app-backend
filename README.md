@@ -53,10 +53,8 @@ This is a **microservices-based e-commerce backend** that demonstrates a scalabl
 │  └─ Request Logging  └─ Retry Logic    └─ Load Balancing          │
 ├────────────────────────────────────────────────────────────────────┤
 │                      MICROSERVICES LAYER                           │
-│  User Service   │  Product Service  │  Cart Service  │  Order Svc │
-│  (Port 5001)    │  (Port 5004)      │  (Port 5002)   │  (Port 5003)
-│                                                                    │
-│                            Search Service (Port 5005)             │
+│  User Service   │  Product Service  │  Search Service              │
+│  (Port 5001)    │  (Port 5002)      │  (Port 5003)                │
 ├────────────────────────────────────────────────────────────────────┤
 │                    SHARED INFRASTRUCTURE                           │
 │  ├─ MongoDB (5017)  ├─ Redis Cache (6379)  ├─ Shared Libraries   │
@@ -105,11 +103,9 @@ curl -X POST http://localhost:3000/api/auth/login \
 | Path | Service | Internal Port |
 |------|---------|---------------|
 | `/api/auth/*` | User Service | 5001 |
-| `/api/products/*` | Product Service | 5004 |
-| `/api/categories/*` | Product Service | 5004 |
-| `/api/cart/*` | Cart Service | 5002 |
-| `/api/orders/*` | Order Service | 5003 |
-| `/api/search/*` | Search Service | 5005 |
+| `/api/products/*` | Product Service | 5002 |
+| `/api/categories/*` | Product Service | 5002 |
+| `/api/search/*` | Search Service | 5003 |
 
 ---
 
@@ -127,7 +123,7 @@ Handles user authentication and authorization.
 
 ---
 
-### 2. **Product Service** (Port 5004)
+### 2. **Product Service** (Port 5002)
 Manages products and categories with caching.
 
 **Endpoints:**
@@ -145,37 +141,7 @@ Manages products and categories with caching.
 
 ---
 
-### 3. **Cart Service** (Port 5002)
-Manages shopping carts for authenticated users.
-
-**Endpoints:**
-- `GET /api/cart` - Get user's cart
-- `POST /api/cart/add` - Add item to cart
-- `POST /api/cart/remove` - Remove item from cart
-- `DELETE /api/cart/clear` - Clear entire cart
-- `POST /api/cart/merge` - Merge cart items
-- `GET /health` - Health check
-
-**Database:** MongoDB
-**Auth Required:** ✅ Yes (JWT token)
-
----
-
-### 4. **Order Service** (Port 5003)
-Manages customer orders and order history.
-
-**Endpoints:**
-- `GET /api/orders` - Get user's orders (paginated)
-- `GET /api/orders/:id` - Get specific order
-- `POST /api/orders` - Create new order
-- `GET /health` - Health check
-
-**Database:** MongoDB
-**Auth Required:** ✅ Yes (JWT token)
-
----
-
-### 5. **Search Service** (Port 5005)
+### 3. **Search Service** (Port 5003)
 Advanced product search with filters.
 
 **Endpoints:**
@@ -246,8 +212,6 @@ cd shared && npm install && cd ..
 # Install service dependencies
 cd user-service && npm install && cd ..
 cd product-service && npm install && cd ..
-cd cart-service && npm install && cd ..
-cd order-service && npm install && cd ..
 cd search-service && npm install && cd ..
 ```
 
@@ -268,13 +232,7 @@ cd user-service && npm start
 # Terminal 2: Product Service
 cd product-service && npm start
 
-# Terminal 3: Cart Service
-cd cart-service && npm start
-
-# Terminal 4: Order Service
-cd order-service && npm start
-
-# Terminal 5: Search Service
+# Terminal 3: Search Service
 cd search-service && npm start
 ```
 
@@ -295,8 +253,6 @@ docker-compose logs -f
 # Specific service
 docker-compose logs -f user-service
 docker-compose logs -f product-service
-docker-compose logs -f cart-service
-docker-compose logs -f order-service
 docker-compose logs -f search-service
 ```
 
@@ -331,7 +287,7 @@ curl -X POST http://localhost:5001/api/auth/login \
 
 ---
 
-### **2. Product Service (Port 5004)**
+### **2. Product Service (Port 5002)**
 
 | Method | Endpoint | Auth | Description | Query Params |
 |--------|----------|------|-------------|--------------|
@@ -351,19 +307,19 @@ curl -X POST http://localhost:5001/api/auth/login \
 **Example:**
 ```bash
 # Get first 10 products (default)
-curl http://localhost:5004/api/products
+curl http://localhost:5002/api/products
 
 # Get products with custom pagination
-curl "http://localhost:5004/api/products?page=1&pageSize=20"
+curl "http://localhost:5002/api/products?page=1&pageSize=20"
 
 # Get second page
-curl "http://localhost:5004/api/products?page=2&pageSize=10"
+curl "http://localhost:5002/api/products?page=2&pageSize=10"
 
 # Get product by ID
-curl http://localhost:5004/api/products/123
+curl http://localhost:5002/api/products/123
 
 # Get all categories
-curl http://localhost:5004/api/categories
+curl http://localhost:5002/api/categories
 ```
 
 **Response Example (GET /api/products):**
@@ -451,7 +407,7 @@ curl -X POST http://localhost:5003/api/orders \
 
 ---
 
-### **5. Search Service (Port 5005)**
+### **5. Search Service (Port 5003)**
 
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
@@ -466,7 +422,7 @@ curl -X POST http://localhost:5003/api/orders \
 
 **Example:**
 ```bash
-curl "http://localhost:5005/api/search?query=laptop&priceMin=500&priceMax=1500&page=1&size=20"
+curl "http://localhost:5003/api/search?query=laptop&priceMin=500&priceMax=1500&page=1&size=20"
 ```
 
 ---
@@ -494,8 +450,8 @@ curl http://localhost:3000/api/search/health
 curl http://localhost:5001/health  # User Service
 curl http://localhost:5002/health  # Cart Service
 curl http://localhost:5003/health  # Order Service
-curl http://localhost:5004/health  # Product Service
-curl http://localhost:5005/health  # Search Service
+curl http://localhost:5002/health  # Product Service
+curl http://localhost:5003/health  # Search Service
 ```
 
 ### **Complete User Flow (Through API Gateway):**
@@ -576,10 +532,10 @@ The `docker-compose.yml` file defines:
 
 - **Services:**
   - `user-service` (Port 5001)
-  - `product-service` (Port 5004)
+  - `product-service` (Port 5002)
   - `cart-service` (Port 5002)
   - `order-service` (Port 5003)
-  - `search-service` (Port 5005)
+  - `search-service` (Port 5003)
   - `mongodb` (Port 27017)
   - `redis` (Port 6379)
 
@@ -726,7 +682,7 @@ docker-compose up -d
 curl http://VM_EXTERNAL_IP:5001/health
 ```
 
-**Firewall Rules:** Ensure ports 5001-5005 are open in GCP Console.
+**Firewall Rules:** Ensure ports 5001-5003 are open in GCP Console.
 
 ---
 

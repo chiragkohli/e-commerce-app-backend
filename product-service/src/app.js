@@ -14,7 +14,7 @@ const createProductRouter = require('./controllers/ProductController');
 const createCategoryRouter = require('./controllers/CategoryController');
 
 const app = express();
-const PORT = process.env.PORT || 5004;
+const PORT = process.env.PORT || 5002;
 
 // --- Cache setup ---
 const redisEnabled = process.env.REDIS_ENABLED === 'true';

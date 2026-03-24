@@ -15,7 +15,7 @@ const createSearchRouter = require('./controllers/SearchController');
 const productRepository = require('./repositories/ProductRepository');
 
 const app = express();
-const PORT = process.env.PORT || 5005;
+const PORT = process.env.PORT || 5003;
 
 // --- Search provider setup ---
 const provider = process.env.SEARCH_PROVIDER || 'AzureAISearch';
