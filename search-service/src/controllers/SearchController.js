@@ -19,7 +19,7 @@ function createSearchRouter(searchService) {
   router.get('/', async (req, res) => {
     try {
       const page = Math.max(1, parseInt(req.query.page || '1', 10));
-      const size = Math.min(1000, Math.max(1, parseInt(req.query.size || '50', 10)));
+      const size = Math.min(1000, Math.max(1, parseInt(req.query.size || '10', 10)));
 
       if (isNaN(page) || page < 1) {
         return res.status(400).json({ success: false, message: 'page must be >= 1' });
